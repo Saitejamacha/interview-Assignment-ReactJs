@@ -20,6 +20,15 @@ export const FormContainer = styled.form`
   border-radius: 10px;
   margin-top: -50px;
 `
+export const Heading = styled.h1`
+  font-size: 35px;
+  font-family: Roboto;
+  color: white;
+  margin-bottom: 40px;
+  @media (min-width: 768px) {
+    margin-bottom: 0px;
+  }
+`
 export const MathInputContainer = styled.div`
   width: 35vw;
   height: 12vh;
@@ -53,8 +62,23 @@ export const Password = styled.input`
   outline: none;
   padding-left: 10px;
 `
+export const ButtonContainer = styled.div`
+  width: 100vw;
+  height: 10vh;
+  margin-top: 10px;
+  //   background-color: lightblue;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  margin-top: -40px;
+  @media (min-width: 768px) {
+    margin-top: 5px;
+  }
+`
+
 export const Button = styled.button`
-  width: 8vw;
+  width: 20vw;
   height: 40px;
   background-color: ${props => (props.logoutBtn ? '#4f6e6a' : '#cdff87')};
   border: 0px;
@@ -65,6 +89,10 @@ export const Button = styled.button`
   align-self: ${props => (props.logoutBtn ? 'flex-end' : 'center')};
   margin-right: 20px;
   color: ${props => (props.logoutBtn ? '#ffffff' : 'black')};
+  @media (min-width: 768px) {
+    width: 8vw;
+    height: 40px;
+  }
 `
 export const Label = styled.label`
   font-size: 15px;

@@ -38,7 +38,7 @@ const DisplayMath = () => {
 
   return (
     <MathContainer student>
-      <Heading  masterText>Master Activity List:</Heading>
+      <Heading masterText>Master Activity List:</Heading>
       {local !== null ? (
         renderMathTable()
       ) : (

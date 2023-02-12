@@ -1,28 +1,30 @@
 import {useState} from 'react'
-import {useNavigate} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import DisplayMath from '../DisplayMath'
 import {
   SessionPageContainer,
   FormContainer,
   MathInputContainer,
+  Heading,
   Label,
   QuestionInput,
   Button,
+  ButtonContainer,
 } from './styledComponents'
 
-const MasterSessionPage = () => {
-  const navigate = useNavigate()
-  const onClickLogoutBtn = () => {
-    navigate('/Student-SignIn')
-  }
+const MasterSessionPage = () => (
+  <SessionPageContainer>
+    <Heading>Student Dashboard</Heading>
+    <Link to="/" style={{textDecoration: 'none'}}>
+      <ButtonContainer>
+        <Button logoutBtn type="submit">
+          Logout
+        </Button>
+      </ButtonContainer>
+    </Link>
 
-  return (
-    <SessionPageContainer>
-      <Button logoutBtn type="submit" onClick={onClickLogoutBtn}>
-        Logout
-      </Button>
-      <DisplayMath />
-    </SessionPageContainer>
-  )
-}
+    <DisplayMath />
+  </SessionPageContainer>
+)
+
 export default MasterSessionPage

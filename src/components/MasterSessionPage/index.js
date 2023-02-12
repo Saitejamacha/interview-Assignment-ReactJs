@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, Link} from 'react-router-dom'
 import DisplayMath from '../DisplayMath'
 import {
   SessionPageContainer,
@@ -7,7 +7,9 @@ import {
   MathInputContainer,
   Label,
   QuestionInput,
+  ButtonContainer,
   Button,
+  Heading,
 } from './styledComponents'
 
 const MasterSessionPage = () => {
@@ -18,9 +20,6 @@ const MasterSessionPage = () => {
 
   const onChangeInput = event => {
     setQuestionInput(event.target.value)
-  }
-  const onClickLogoutBtn = () => {
-    navigate('/Master-SignIn')
   }
 
   //   function containsUppercase(str) {
@@ -64,9 +63,15 @@ const MasterSessionPage = () => {
 
   return (
     <SessionPageContainer>
-      <Button logoutBtn type="submit" onClick={onClickLogoutBtn}>
-        Logout
-      </Button>
+      <Heading>Master Dashboard</Heading>
+      <Link to="/" style={{textDecoration: 'none'}}>
+        <ButtonContainer>
+          <Button logoutBtn type="submit">
+            Logout
+          </Button>
+        </ButtonContainer>
+      </Link>
+
       <FormContainer onSubmit={onSubmitQuestion}>
         <MathInputContainer>
           <Label htmlFor="Question">Question</Label>

@@ -5,14 +5,16 @@ import {
   SgnUpContainer,
   SignUpFormContainer,
   InputContainer,
+  Heading,
   Label,
   UserName,
   Password,
-  ButtonContainer,
-  SignUpButton,
+  Button,
   DirectionText,
   MesgText,
   SuccessText,
+  ButtonContainer,
+  HiddenButtonContainer,
 } from './styledComponents'
 
 const StudentSignUp = () => {
@@ -52,6 +54,14 @@ const StudentSignUp = () => {
 
   return (
     <SgnUpContainer>
+      <Link to="/" style={{textDecoration: 'none'}}>
+        <ButtonContainer>
+          <Button logoutBtn type="submit">
+            Home
+          </Button>
+        </ButtonContainer>
+      </Link>
+      <Heading>Sign Up</Heading>
       <SignUpFormContainer onSubmit={onClickSubmitSignUp}>
         <InputContainer>
           <Label htmlFor="userName">UserName</Label>
@@ -80,14 +90,14 @@ const StudentSignUp = () => {
         ) : (
           <MesgText>{statusText}</MesgText>
         )}
-        <ButtonContainer>
+        <HiddenButtonContainer>
           {isUserSignUp && (
             <Link to="/Student-SignIn">
-              <SignUpButton type="submit">SignIn</SignUpButton>
+              <Button type="submit">SignIn</Button>
             </Link>
           )}
-          <SignUpButton type="submit">SignUp</SignUpButton>
-        </ButtonContainer>
+          <Button type="submit">SignUp</Button>
+        </HiddenButtonContainer>
         {/* <MesgText >{statusText}</MesgText> */}
         <Link to="/Student-SignIn">
           <DirectionText>Already Have Account</DirectionText>

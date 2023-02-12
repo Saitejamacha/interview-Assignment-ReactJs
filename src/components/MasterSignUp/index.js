@@ -7,12 +7,14 @@ import {
   InputContainer,
   Label,
   UserName,
+  Heading,
   Password,
-  ButtonContainer,
-  SignUpButton,
+  Button,
   DirectionText,
   MesgText,
   SuccessText,
+  ButtonContainer,
+  HiddenButtonContainer,
 } from './styledComponents'
 
 const MasterSignUp = () => {
@@ -52,9 +54,17 @@ const MasterSignUp = () => {
 
   return (
     <SgnUpContainer>
+      <Link to="/" style={{textDecoration: 'none'}}>
+        <ButtonContainer>
+          <Button logoutBtn type="submit">
+            Home
+          </Button>
+        </ButtonContainer>
+      </Link>
+      <Heading>Sign Up</Heading>
       <SignUpFormContainer onSubmit={onClickSubmitSignUp}>
         <InputContainer>
-          <Label htmlFor="userName">UserName</Label>
+          <Label htmlFor="userName">Username</Label>
           <UserName
             onChange={onChangeUserName}
             value={userName}
@@ -80,14 +90,14 @@ const MasterSignUp = () => {
         ) : (
           <MesgText>{statusText}</MesgText>
         )}
-        <ButtonContainer>
+        <HiddenButtonContainer>
           {isUserSignUp && (
             <Link to="/Master-SignIn">
-              <SignUpButton type="submit">SignIn</SignUpButton>
+              <Button type="submit">SignIn</Button>
             </Link>
           )}
-          <SignUpButton type="submit">SignUp</SignUpButton>
-        </ButtonContainer>
+          <Button type="submit">SignUp</Button>
+        </HiddenButtonContainer>
         {/* <MesgText >{statusText}</MesgText> */}
         <Link to="/Master-SignIn">
           <DirectionText>Already Have Account</DirectionText>

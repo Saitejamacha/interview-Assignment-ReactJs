@@ -9,6 +9,23 @@ export const LoginContainer = styled.div`
   align-items: center;
   flex-direction: column;
 `
+export const ButtonContainer = styled.div`
+  width: 100vw;
+  height: 10vh;
+  //   background-color: lightblue;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  margin-top: -80px;
+`
+
+export const Heading = styled.h1`
+  font-size: 35px;
+  font-family: Roboto;
+  color: white;
+`
+
 export const LoginFormContainer = styled.form`
   width: 90vw;
   height: 55vh;
@@ -67,20 +84,25 @@ export const Password = styled.input`
     height: 40px;
   }
 `
-export const LoginButton = styled.button`
+
+export const Button = styled.button`
   width: 20vw;
   height: 40px;
-  background-color: #cdff87;
+  background-color: ${props => (props.logoutBtn ? '#4f6e6a' : '#cdff87')};
   border: 0px;
   margin-top: 10px;
   border-radius: 10px;
   cursor: pointer;
   outline: none;
+  align-self: ${props => (props.logoutBtn ? 'flex-end' : 'center')};
+  margin-right: 20px;
+  color: ${props => (props.logoutBtn ? '#ffffff' : 'black')};
   @media (min-width: 768px) {
     width: 8vw;
     height: 40px;
   }
 `
+
 export const Label = styled.label`
   font-size: 15px;
   font-family: roboto;

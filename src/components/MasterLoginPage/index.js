@@ -5,11 +5,13 @@ import {
   LoginContainer,
   LoginFormContainer,
   InputContainer,
+  Heading,
   Label,
   UserName,
   Password,
-  LoginButton,
   DirectionText,
+  ButtonContainer,
+  Button,
 } from './styledComponents'
 
 const MasterLoginPage = () => {
@@ -46,6 +48,14 @@ const MasterLoginPage = () => {
 
   return (
     <LoginContainer>
+      <Link to="/" style={{textDecoration: 'none'}}>
+        <ButtonContainer>
+          <Button logoutBtn type="submit">
+            Home
+          </Button>
+        </ButtonContainer>
+      </Link>
+      <Heading>Sign In</Heading>
       <LoginFormContainer onSubmit={onClickSubmit}>
         <InputContainer>
           <Label htmlFor="userName">UserName</Label>
@@ -69,7 +79,7 @@ const MasterLoginPage = () => {
           />
         </InputContainer>
 
-        <LoginButton type="submit">LogIn</LoginButton>
+        <Button type="submit">LogIn</Button>
 
         <Link to="/Master-SignUp">
           {/* <LoginButton onClick={onClear} type="submit">
